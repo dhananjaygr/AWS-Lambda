@@ -6,15 +6,37 @@
 
 Before performing validations using AWS Lambda in CloudLabs, please make sure that the AWS Lambda function is set up properly. To set it up, please follow the steps below.
 
-1. Log in to your AWS account and search for **Lambda** in the search bar. Then click on it.
+>**Note:** This is just an example where we are using AWS Lambda to validate whether an S3 bucket is present or not. The setup is deployed in a separate account, and during validation, we use the CloudLabs ODL user to validate the S3 bucket in the account where the actual Lambda function and S3 bucket reside.
+
+1. Log in to your AWS account and search for **IAM** in the search bar. Then click on it.
+
+   ![](./Img/old01.png)
+
+2. Click on **Roles**, and then click **Create role**.
+
+   ![](./Img/old02.png)
+
+3. Select **AWS service** and choose **Lambda**. Then click **Next**.
+
+   ![](./Img/old03.png)
+
+4. Search for the policy named **AmazonS3ReadOnlyAccess** and check the box next to it. Then click **Next**.
+
+   ![](./Img/old04.png)
+
+5. Provide the role name as **LambdaS3CheckerRole**, and click **Create role**.
+
+   ![](./Img/old05.png)
+
+6. Search for **Lambda** in the search bar and click on it.
 
    ![](./Img/01.png)
 
-2. Click on **Functions**, and then click on **Create function**.
+7. Click on **Functions**, and then click on **Create function**.
 
    ![](./Img/02.png)
 
-3. Choose **Author from scratch** and provide the following:
+8. Choose **Author from scratch** and provide the following:
 
    **Function name**: `S3BucketChecker`
 
@@ -22,11 +44,11 @@ Before performing validations using AWS Lambda in CloudLabs, please make sure th
 
    ![](./Img/03.png)
 
-5. Under **Permissions**, click **Change default execution role** and select **Use an existing role**. Choose the **LambdaS3CheckerRole** you created in Step 1. Then click **Create function**.
+9. Under **Permissions**, click **Change default execution role** and select **Use an existing role**. Choose the **LambdaS3CheckerRole** you created in Step 1. Then click **Create function**.
 
    ![](./Img/04.png)
 
-6. In the **Code** tab, delete the existing code and paste the following:
+10. In the **Code** tab, delete the existing code and paste the following:
 
    ```python
    import boto3
@@ -52,25 +74,25 @@ Before performing validations using AWS Lambda in CloudLabs, please make sure th
            }
    ```
 
-7. Click **Deploy**.
+11. Click **Deploy**.
 
    ![](./Img/05.png)
 
-8. Click the **Test** button (blue button).
+11. Click the **Test** button (blue button).
 
    ![](./Img/06.png)
 
-9. Provide a test name such as **MyTest**. You do not need to modify the JSON data.
+11. Provide a test name such as **MyTest**. You do not need to modify the JSON data.
 
-10. Click **Save**, and then click **Invoke/Test** again.
+12. Click **Save**, and then click **Invoke/Test** again.
 
-   ![](./Img/08.png)
+    ![](./Img/08.png)
 
-11. Log in to the CloudLabs portal and navigate to the required tenant (WIZ). On the left-hand side of the page, you will see the **Template** section.
+13. Log in to the CloudLabs portal and navigate to the required tenant (WIZ). On the left-hand side of the page, you will see the **Template** section.
 
-12. Navigate to **Template (1)** from the left menu and go to your respective template. Click the **Edit (2)** button.
+14. Navigate to **Template (1)** from the left menu and go to your respective template. Click the **Edit (2)** button.
 
-13. Navigate to the **ODL (1)** section in the left menu, go to your respective ODL, click the **Users (2)** button, and deploy the user.
+15. Navigate to the **ODL (1)** section in the left menu, go to your respective ODL, click the **Users (2)** button, and deploy the user.
 
 * Convert this into a **formal SOP**
 * Add a **“Validation Result”** section
