@@ -48,13 +48,15 @@ Before performing validations using AWS Lambda in CloudLabs, please make sure th
    
    Choose the **LambdaS3CheckerRole** you created in Step 1. 
 
-   Under **Additional configurations**, scroll down to **Function URL** and enable the **checkbox**.
+   Under **Additional configurations**, scroll down to **Function URL**, enable the **checkbox**, and then select the **None** option.
 
    Then click **Create function**.   
 
    ![](./Img/04.png)
 
-   ![](./Img/20.png)  
+   ![](./Img/20.png)
+
+   ![](./Img/21.png)     
 
 11. In the **Code** tab, delete the existing code and paste the following:
 
