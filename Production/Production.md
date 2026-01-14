@@ -39,15 +39,16 @@ Before performing validations using AWS Lambda in CloudLabs, please make sure th
 8. Choose **Author from scratch** and provide the following:
 
    **Function name**: `S3BucketChecker`
+   
    **Runtime**: Select **Python 3.12** (or the latest version).
 
    ![](./Img/03.png)
 
-9. Under **Permissions**, click **Change default execution role** and select **Use an existing role**. Choose the **LambdaS3CheckerRole** you created in Step 1. Then click **Create function**.
+10. Under **Permissions**, click **Change default execution role** and select **Use an existing role**. Choose the **LambdaS3CheckerRole** you created in Step 1. Then click **Create function**.
 
    ![](./Img/04.png)
 
-10. In the **Code** tab, delete the existing code and paste the following:
+11. In the **Code** tab, delete the existing code and paste the following:
 
 ```python
 import boto3
@@ -120,9 +121,13 @@ def lambda_handler(event, context):
 23. Select the **Validation Lambda** module and click the **+** icon. Configure the following highlighted fields:
 
 * **Name:** validationlambda
+
 * **Validation Type:** Custom
+
 * **Platform Friendly Name:** Amazon Web Services
+
 * **Script Type:** PowerShellV2
+
 * **Script:**
 
   ```
