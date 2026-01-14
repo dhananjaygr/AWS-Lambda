@@ -119,7 +119,7 @@ Before performing validations using AWS Lambda in CloudLabs, please make sure th
 
     ![](./Img/14.png)
 
-23. Click on the **+ Add** button again.
+23. Click on the **+** button again.
 
     ![](./Img/13.png)
 
