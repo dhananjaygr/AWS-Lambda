@@ -1,58 +1,78 @@
-# CloudLabs Validations Using AWS Lambda  
+# CloudLabs Validations Using AWS Lambda
 
-### Steps to Use CloudLabs Validations Using AWS Lambda  
+### Steps to Use CloudLabs Validations Using AWS Lambda
 
-**Prerequisites**
+### **Prerequisites**
 
-Before performing the validations using the AWS Lambda in Cloudlabs, ensure that the AWS Lambda Function is set up properly. To set them up, please follow the provided steps. 
+Before performing validations using AWS Lambda in CloudLabs, please make sure that the AWS Lambda function is set up properly. To set it up, please follow the steps below.
 
-1. Log in to your AWS Account and search for Lambda in the search bar. Then click on it. 
+1. Log in to your AWS account and search for **Lambda** in the search bar. Then click on it.
 
-2. Then click on Functions and then click on Create Function.
+   ![](./Img/01.png)
 
-3. Choose Author from scratch.
+2. Click on **Functions**, and then click on **Create function**.
 
-4. Function name: S3BucketChecker.
+   ![](./Img/02.png)
 
-5. Runtime: Select Python 3.12 (or the latest version).
+3. Choose **Author from scratch** and provide the following:
 
-6. Under Permissions, click "Change default execution role" and select Use an existing role. Choose the LambdaS3CheckerRole you made in Step 1.
+   **Function name**: `S3BucketChecker`
 
-7. Click Create function.
+   **Runtime**: Select **Python 3.12** (or the latest version).
 
-8. In the "Code" tab, delete everything and paste this in:  
+   ![](./Img/03.png)
 
-```
-import boto3
-from botocore.exceptions import ClientError
+5. Under **Permissions**, click **Change default execution role** and select **Use an existing role**. Choose the **LambdaS3CheckerRole** you created in Step 1. Then click **Create function**.
 
-def lambda_handler(event, context):
-    # REPLACE THIS with the name of the bucket you want to check
-    bucket_name = 'your-bucket-name-here'
-    
-    s3 = boto3.client('s3')
-    
-    try:
-        # This checks if the bucket exists and if you have permission to see it
-        s3.head_bucket(Bucket=bucket_name)
-        return {
-            'statusCode': 200,
-            'body': f"Success! S3 bucket '{bucket_name}' is there in the account."
-        }
-    except ClientError as e:
-        # If it returns a 404, it means the bucket is not there
-        return {
-            'statusCode': 404,
-            'body': f"S3 bucket '{bucket_name}' is not there in the account."
-        }
-```
+   ![](./Img/04.png)
 
-9. Click Deploy at the top of the code editor.  
+6. In the **Code** tab, delete the existing code and paste the following:
 
-10. Click the Test button (blue button).
+   ```python
+   import boto3
+   from botocore.exceptions import ClientError
 
-11. Give the test a name like MyTest. You don't need to change the JSON data.
+   def lambda_handler(event, context):
+       # REPLACE THIS with the name of the bucket you want to check
+       bucket_name = 'your-bucket-name-here'
+       
+       s3 = boto3.client('s3')
+       
+       try:
+           # This checks if the bucket exists and if you have permission to access it
+           s3.head_bucket(Bucket=bucket_name)
+           return {
+               'statusCode': 200,
+               'body': f"Success! S3 bucket '{bucket_name}' exists in the account."
+           }
+       except ClientError:
+           return {
+               'statusCode': 404,
+               'body': f"S3 bucket '{bucket_name}' does not exist in the account."
+           }
+   ```
 
-12. Click Save, then click Invoke/test again. 
+7. Click **Deploy**.
 
-13. Navigate to the ODL (1) section in the left menu and go to your respective ODL. Click the Users (2) button and deploy the user.
+   ![](./Img/05.png)
+
+8. Click the **Test** button (blue button).
+
+   ![](./Img/06.png)
+
+9. Provide a test name such as **MyTest**. You do not need to modify the JSON data.
+
+10. Click **Save**, and then click **Invoke/Test** again.
+
+   ![](./Img/08.png)
+
+11. Log in to the CloudLabs portal and navigate to the required tenant (WIZ). On the left-hand side of the page, you will see the **Template** section.
+
+12. Navigate to **Template (1)** from the left menu and go to your respective template. Click the **Edit (2)** button.
+
+13. Navigate to the **ODL (1)** section in the left menu, go to your respective ODL, click the **Users (2)** button, and deploy the user.
+
+* Convert this into a **formal SOP**
+* Add a **“Validation Result”** section
+* Add **error-handling explanations**
+* Make it **CloudLabs documentation–ready** (internal format)
