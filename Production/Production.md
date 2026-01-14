@@ -42,13 +42,13 @@ Before performing validations using AWS Lambda in CloudLabs, please make sure th
    
    **Runtime**: Select **Python 3.12** (or the latest version).
 
-   ![](./Img/03.png)
+   ![](./Img/03.png).
 
-10. Under **Permissions**, click **Change default execution role** and select **Use an existing role**. Choose the **LambdaS3CheckerRole** you created in Step 1. Then click **Create function**.
+9. Under **Permissions**, click **Change default execution role** and select **Use an existing role**. Choose the **LambdaS3CheckerRole** you created in Step 1. Then click **Create function**.
 
    ![](./Img/04.png)
 
-11. In the **Code** tab, delete the existing code and paste the following:
+10. In the **Code** tab, delete the existing code and paste the following:
 
 ```python
 import boto3
