@@ -156,7 +156,7 @@ Before performing validations using AWS Lambda in CloudLabs, please make sure th
       }
       ```
 
-    >**Note:** Whenever the function URL changes, please ensure that it is updated in the script above.   
+     >**Note:** Whenever the function URL changes, please ensure that it is updated in the script above.   
       
     * **Run As:** System
 
