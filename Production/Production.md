@@ -160,7 +160,7 @@ Before performing validations using AWS Lambda in CloudLabs, please make sure th
       >**Note:** Whenever the function URL changes, please ensure that it is updated in the script above.   
 
       
-      * **Run As:** System
+    * **Run As:** System
 
 24. After providing the above details, click **Submit** to save the configuration.
 
