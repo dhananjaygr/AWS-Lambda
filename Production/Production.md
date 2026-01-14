@@ -83,7 +83,7 @@ Before performing validations using AWS Lambda in CloudLabs, please make sure th
 
     ![](./Img/05.png)
 
-13. Click the **Test** button (blue button).
+13. Click the **Test button** (blue button), and then click **Create new test event**.         
 
     ![](./Img/06.png)
 
@@ -121,7 +121,7 @@ Before performing validations using AWS Lambda in CloudLabs, please make sure th
 
 23. Click on the **+ Add** button again.
 
-    ![](./Img/11.png)
+    ![](./Img/13.png)
 
 24. Select the **Validation Lambda** module and click the **+** icon. Configure the following highlighted fields:
 
@@ -158,7 +158,7 @@ Before performing validations using AWS Lambda in CloudLabs, please make sure th
 
     >**Note:** Whenever the function URL changes, please ensure that it is updated in the script above.   
       
-* **Run As:** System
+    * **Run As:** System
 
 24. After providing the above details, click **Submit** to save the configuration.
 
