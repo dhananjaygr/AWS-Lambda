@@ -56,7 +56,7 @@ Before performing validations using AWS Lambda in CloudLabs, please make sure th
 
    ![](./Img/21.png)     
 
-11. In the **Code** tab, delete the existing code and paste the following:
+10. In the **Code** tab, delete the existing code and paste the following:
 
       ```python
       import boto3
@@ -79,51 +79,51 @@ Before performing validations using AWS Lambda in CloudLabs, please make sure th
               }
       ```
 
-12. Click **Deploy**.
+11. Click **Deploy**.
 
     ![](./Img/05.png)
 
-13. Click the **Test button** (blue button), and then click **Create new test event**.         
+12. Click the **Test button** (blue button), and then click **Create new test event**.         
 
     ![](./Img/06.png)
 
-14. Provide a test name such as **MyTest**. You do not need to modify the JSON data.
+13. Provide a test name such as **MyTest**. You do not need to modify the JSON data.
 
-15. Click **Save**, and then click **Invoke/Test** again.
+14. Click **Save**, and then click **Invoke/Test** again.
 
     ![](./Img/08.png)
 
-16. Log in to the CloudLabs portal and navigate to the required tenant (WIZ). On the left-hand side of the page, you will see the **Template** section.
+15. Log in to the CloudLabs portal and navigate to the required tenant (WIZ). On the left-hand side of the page, you will see the **Template** section.
 
-17. Navigate to **Template (1)** from the left menu and go to your respective template. Click the **Edit (2)** button.
+16. Navigate to **Template (1)** from the left menu and go to your respective template. Click the **Edit (2)** button.
 
     ![](./Img/09.png)
 
-18. Scroll down to the **Course Details** section, then click on the **Manage** button.
+17. Scroll down to the **Course Details** section, then click on the **Manage** button.
 
     ![](./Img/10.png)
 
-19. Click on the **+ Add** button.
+18. Click on the **+ Add** button.
 
     ![](./Img/11.png)
 
-20. Provide the name **ValidationLambda** and click **Submit**.
+19. Provide the name **ValidationLambda** and click **Submit**.
 
     ![](./Img/12.png)
 
-21. Click on the **+** symbol.
+20. Click on the **+** symbol.
 
     ![](./Img/13.png)
 
-22. Click the **Labs +** symbol. Provide the type as **Lab**, name it **Validation Lambda**, and click **Submit**.
+21. Click the **Labs +** symbol. Provide the type as **Lab**, name it **Validation Lambda**, and click **Submit**.
 
     ![](./Img/14.png)
 
-23. Click on the **+** button again.
+22. Click on the **+** button again.
 
     ![](./Img/13.png)
 
-24. Select the **Validation Lambda** module and click the **+** icon. Configure the following highlighted fields:
+23. Select the **Validation Lambda** module and click the **+** icon. Configure the following highlighted fields:
 
     * **Name:** validationlambda
    
@@ -156,9 +156,11 @@ Before performing validations using AWS Lambda in CloudLabs, please make sure th
       }
       ```
 
-     >**Note:** Whenever the function URL changes, please ensure that it is updated in the script above.   
+
+      >**Note:** Whenever the function URL changes, please ensure that it is updated in the script above.   
+
       
-    * **Run As:** System
+      * **Run As:** System
 
 24. After providing the above details, click **Submit** to save the configuration.
 
