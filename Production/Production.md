@@ -44,11 +44,19 @@ Before performing validations using AWS Lambda in CloudLabs, please make sure th
 
    ![](./Img/03.png)
 
-9. Under **Permissions**, click **Change default execution role** and select **Use an existing role**. Choose the **LambdaS3CheckerRole** you created in Step 1. Then click **Create function**.
+9. Under **Permissions**, click **Change default execution role** and select **Use an existing role**.
+   
+   Choose the **LambdaS3CheckerRole** you created in Step 1. 
+
+   Under **Additional configurations**, scroll down to **Function URL** and enable the **checkbox**.
+
+   Then click **Create function**.   
 
    ![](./Img/04.png)
 
-10. In the **Code** tab, delete the existing code and paste the following:
+   ![](./Img/20.png)  
+
+11. In the **Code** tab, delete the existing code and paste the following:
 
       ```python
       import boto3
@@ -71,51 +79,51 @@ Before performing validations using AWS Lambda in CloudLabs, please make sure th
               }
       ```
 
-11. Click **Deploy**.
+12. Click **Deploy**.
 
     ![](./Img/05.png)
 
-12. Click the **Test** button (blue button).
+13. Click the **Test** button (blue button).
 
     ![](./Img/06.png)
 
-13. Provide a test name such as **MyTest**. You do not need to modify the JSON data.
+14. Provide a test name such as **MyTest**. You do not need to modify the JSON data.
 
-14. Click **Save**, and then click **Invoke/Test** again.
+15. Click **Save**, and then click **Invoke/Test** again.
 
     ![](./Img/08.png)
 
-15. Log in to the CloudLabs portal and navigate to the required tenant (WIZ). On the left-hand side of the page, you will see the **Template** section.
+16. Log in to the CloudLabs portal and navigate to the required tenant (WIZ). On the left-hand side of the page, you will see the **Template** section.
 
-16. Navigate to **Template (1)** from the left menu and go to your respective template. Click the **Edit (2)** button.
+17. Navigate to **Template (1)** from the left menu and go to your respective template. Click the **Edit (2)** button.
 
     ![](./Img/09.png)
 
-17. Scroll down to the **Course Details** section, then click on the **Manage** button.
+18. Scroll down to the **Course Details** section, then click on the **Manage** button.
 
     ![](./Img/10.png)
 
-18. Click on the **+ Add** button.
+19. Click on the **+ Add** button.
 
     ![](./Img/11.png)
 
-19. Provide the name **ValidationLambda** and click **Submit**.
+20. Provide the name **ValidationLambda** and click **Submit**.
 
     ![](./Img/12.png)
 
-20. Click on the **+** symbol.
+21. Click on the **+** symbol.
 
     ![](./Img/13.png)
 
-21. Click the **Labs +** symbol. Provide the type as **Lab**, name it **Validation Lambda**, and click **Submit**.
+22. Click the **Labs +** symbol. Provide the type as **Lab**, name it **Validation Lambda**, and click **Submit**.
 
     ![](./Img/14.png)
 
-22. Click on the **+ Add** button again.
+23. Click on the **+ Add** button again.
 
     ![](./Img/11.png)
 
-23. Select the **Validation Lambda** module and click the **+** icon. Configure the following highlighted fields:
+24. Select the **Validation Lambda** module and click the **+** icon. Configure the following highlighted fields:
 
     * **Name:** validationlambda
    
