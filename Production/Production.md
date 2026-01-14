@@ -44,11 +44,9 @@ Before performing validations using AWS Lambda in CloudLabs, please make sure th
 
    ![](./Img/03.png)
 
-9. Under **Permissions**, click **Change default execution role** and select **Use an existing role**.
-   
-   Choose the **LambdaS3CheckerRole** you created in Step 1. 
+9. Under **Permissions**, click **Change default execution role** and select **Use an existing role**. Choose **LambdaS3CheckerRole** from the drop-down that you created in Step 1.
 
-   Under **Additional configurations**, scroll down to **Function URL**, enable the **checkbox**, and then select the **None** option.
+   Under **Additional configurations**, scroll down to **Function URL**, enable the **checkbox**, and select **None** as the **Auth type**.
 
    Then click **Create function**.   
 
